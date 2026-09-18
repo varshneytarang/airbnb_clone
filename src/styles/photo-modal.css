@@ -1,0 +1,200 @@
+/* Photo Modal Custom Styles - Light Theme */
+.photo-modal-backdrop {
+  backdrop-filter: blur(8px);
+  background: #ffffff;
+}
+
+.photo-modal {
+  background: #ffffff;
+}
+
+.photo-modal-image {
+  object-fit: contain;
+  max-height: calc(100vh - 160px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  background: transparent;
+}
+
+.photo-grid-item {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #ffffff;
+}
+
+.photo-grid-item:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail-item {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #ffffff;
+}
+
+.thumbnail-item:hover {
+  transform: scale(1.05);
+}
+
+.thumbnail-item.active {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 2px #FF385C, 0 0 0 4px rgba(255, 56, 92, 0.2);
+}
+
+.thumbnail-sidebar {
+  background: linear-gradient(180deg, rgba(249, 250, 251, 0.95) 0%, rgba(243, 244, 246, 0.9) 100%);
+}
+
+/* Smooth transitions for modal content */
+.modal-transition-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.modal-transition-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.modal-transition-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-transition-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 200ms, transform 200ms;
+}
+
+/* Custom scrollbar for modal - Light Theme */
+.photo-modal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.photo-modal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.photo-modal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.photo-modal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Keyboard hints animation */
+.keyboard-hint {
+  animation: fadeInUp 0.5s ease-out;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Category section animations */
+.category-section {
+  animation: staggerIn 0.6s ease-out forwards;
+}
+
+@keyframes staggerIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Image hover effects - Light Theme */
+.image-hover-overlay {
+  background: linear-gradient(45deg, 
+    rgba(0, 0, 0, 0.05) 0%, 
+    rgba(0, 0, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-hover-overlay.visible {
+  opacity: 1;
+}
+
+/* Grid layout consistency */
+.desktop-photo-grid {
+  background: transparent;
+}
+
+.desktop-photo-grid img {
+  background-color: #f9fafb;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .photo-modal-image {
+    max-height: calc(100vh - 200px);
+  }
+  
+  .thumbnail-sidebar {
+    display: none;
+  }
+  
+  .mobile-photo-grid img {
+    background-color: #f9fafb;
+  }
+}
+
+/* Focus styles for accessibility - Light Theme */
+.photo-modal button:focus {
+  outline: 2px solid #FF385C;
+  outline-offset: 2px;
+}
+
+.photo-modal button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Loading states - Light Theme */
+.image-loading {
+  background: linear-gradient(90deg, 
+    rgba(0, 0, 0, 0.05) 0%, 
+    rgba(0, 0, 0, 0.1) 50%, 
+    rgba(0, 0, 0, 0.05) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Consistent border radius */
+.photo-grid-rounded {
+  border-radius: 0.75rem;
+}
+
+/* Ensure consistent aspect ratios */
+.aspect-photo {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-photo-main {
+  aspect-ratio: 4 / 3;
+}

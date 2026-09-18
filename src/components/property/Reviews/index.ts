@@ -1,0 +1,5 @@
+export { default as ReviewsSection } from './ReviewsSection'
+export { default as ReviewCard } from './ReviewCard'
+export { default as ReviewStats } from './ReviewStats'
+export { default as ReviewFilters } from './ReviewFilters'
+export { default as ReviewsModal } from './ReviewsModal'
