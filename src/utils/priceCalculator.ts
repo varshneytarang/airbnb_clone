@@ -39,7 +39,7 @@ export const calculateBookingPrice = (
 }
 
 export const formatPriceBreakdown = (pricing: BookingPricing): PriceBreakdownItem[] => {
-  const breakdown = [
+  const breakdown: PriceBreakdownItem[] = [
     {
       label: `₹${pricing.basePrice.toLocaleString()} x ${pricing.nights} nights`,
       amount: pricing.subtotal
